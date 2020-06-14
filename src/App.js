@@ -3,11 +3,13 @@ import Home from './home.js';
 import './App.css';
 function App () {
   var  [a, seta] = useState(0);
-  var [b, setb] = useState(true)
+  var  [b, setb] = useState(true)
+  
   return (  
     
     <div className={`box ${b ? 'dayLight' : ''}`}>
      <h1 className= 'font' > Day Status= { b? 'Morning' : 'Night'}   </h1>
+     
      <Home counter={a} />
 
 
@@ -15,13 +17,23 @@ function App () {
 <button onClick= {
   ()=> seta(++a)
 } 
->
+> Add Count </button>
+  <br/>
 
-  Click To Add
-</button>
-<button onClick= {
+  <button onClick= {
   ()=> setb(!b)
-}  >Update Morning</button>
+}  >Change Day</button>
+
+
+<br/>
+
+<button onClick= {
+  ()=> seta(--a)
+}  >Decrease Count</button>
+
+
+
+
 
 
    </div>
