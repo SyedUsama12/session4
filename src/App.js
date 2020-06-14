@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState}from 'react';
+import Home from './home.js';
 import './App.css';
+function App () {
+  var  [a, seta] = useState(0);
+  var [b, setb] = useState(true)
+  return (  
+    
+    <div className={`box ${b ? 'dayLight' : ''}`}>
+     <h1 className= 'font' > Day Status= { b? 'Morning' : 'Night'}   </h1>
+     <Home counter={a} />
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+<br/>
+<button onClick= {
+  ()=> seta(++a)
+} 
+>
+
+  Click To Add
+</button>
+<button onClick= {
+  ()=> setb(!b)
+}  >Update Morning</button>
+
+
+   </div>
+
+
+  )
+};
+
+
+
+   
+
+
 
 export default App;
